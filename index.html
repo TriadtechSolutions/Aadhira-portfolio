@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Aadhira | EX Radio Jockey & Multilingual Voice Artist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E97451;
+            --primary-dark: #D45A38;
+            --accent: #FFB84D;
+            --text-dark: #0D0D0D;
+            --text-gray: #525252;
+            --text-light: #737373;
+            --bg-white: #FFFFFF;
+            --bg-light: #F9FAFB;
+            --bg-lighter: #FAFAFA;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.875rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            z-index: 1002;
+            padding: 2rem;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu-panel.active {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-light);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-dark);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-close:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .mobile-menu-nav {
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-menu-nav a {
+            padding: 1rem 1.25rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .mobile-menu-nav a:hover {
+            background: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+            padding-top: 3.5rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(233, 116, 81, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-microphone {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-waveform {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            opacity: 0.06;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            padding: 0 1.5rem;
+            overflow: hidden;
+        }
+
+        .wave-bar {
+            flex: 1;
+            background: var(--primary);
+            border-radius: 2px 2px 0 0;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(2n) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3n) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4n) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% { height: 30%; }
+            50% { height: 80%; }
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+            margin-right: 633px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: rgba(233, 116, 81, 0.12);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(233, 116, 81, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.625rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .lang-badge {
+            padding: 0.5rem 0.875rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 0.8125rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.65;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 0.875rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(233, 116, 81, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(233, 116, 81, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Section Base */
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .section-header.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background: var(--bg-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .about-image.visible {
+            animation: slideInLeft 0.6s ease forwards 0.1s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 3/4;
+            background: var(--bg-light);
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .about-content.visible {
+            animation: slideInRight 0.6s ease forwards 0.2s;
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-text {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* Experience Timeline */
+        .experience-timeline {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-company {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.375rem;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-duration {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(233, 116, 81, 0.1);
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-role {
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-item {
+            padding: 1.25rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .highlight-number {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            display: block;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-label {
+            font-size: 0.8125rem;
+            color: var(--text-gray);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .about-contact {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .contact-text {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.875rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, #E1306C, #C13584);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(193, 53, 132, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(193, 53, 132, 0.3);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 0;
+            background: var(--bg-lighter);
+        }
+
+        /* Slider System */
+        .slider-container {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .projects-grid,
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .projects-grid.slider-track,
+        .services-grid.slider-track {
+            display: flex;
+            gap: 1.25rem;
+            transition: transform 0.4s ease;
+            overflow: visible;
+        }
+
+        .projects-grid.slider-track .project-card,
+        .services-grid.slider-track .service-card {
+            flex: 0 0 320px;
+            max-width: 320px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+            color: var(--text-dark);
+            font-size: 0.875rem;
+        }
+
+        .slider-arrow:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-prev {
+            left: -22px;
+        }
+
+        .slider-next {
+            right: -22px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            text-decoration: none;
+        }
+
+        .project-card.visible {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.05s; }
+        .project-card:nth-child(2) { animation-delay: 0.1s; }
+        .project-card:nth-child(3) { animation-delay: 0.15s; }
+        .project-card:nth-child(4) { animation-delay: 0.2s; }
+        .project-card:nth-child(5) { animation-delay: 0.25s; }
+        .project-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.08);
+        }
+
+        .project-image {
+            height: 160px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+        }
+
+        .project-desc {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: gap 0.2s ease;
+        }
+
+        .project-link:hover {
+            gap: 0.625rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: var(--text-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(233, 116, 81, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .services .section-label {
+            color: var(--accent);
+        }
+
+        .services .section-title {
+            color: white;
+        }
+
+        .services .slider-arrow {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .services .slider-arrow:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .service-card {
+            padding: 1.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .service-card.visible {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.05s; }
+        .service-card:nth-child(2) { animation-delay: 0.1s; }
+        .service-card:nth-child(3) { animation-delay: 0.15s; }
+        .service-card:nth-child(4) { animation-delay: 0.2s; }
+        .service-card:nth-child(5) { animation-delay: 0.25s; }
+        .service-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.08);
+        }
+
+        .service-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .service-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        /* Offers Section */
+        .offers {
+            padding: 4rem 0;
+            background: var(--bg-white);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .offer-card {
+            padding: 1.75rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .offer-card.visible {
+            animation: scaleIn 0.5s ease forwards;
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .offer-card:nth-child(1) { animation-delay: 0.05s; }
+        .offer-card:nth-child(2) { animation-delay: 0.1s; }
+        .offer-card:nth-child(3) { animation-delay: 0.15s; }
+        .offer-card:nth-child(4) { animation-delay: 0.2s; }
+
+        .offer-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .offer-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .offer-card:hover .offer-icon {
+            transform: scale(1.1);
+        }
+
+        .offer-title {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .offer-desc {
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 4rem 0;
+            background: var(--bg-lighter);
+        }
+
+        .clients-showcase {
+            margin-top: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .clients-scroll {
+            display: flex;
+            gap: 1.25rem;
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .clients-track {
+            display: flex;
+            gap: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .client-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .client-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+        }
+
+        .client-logo {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-size: 1.125rem;
+            color: var(--primary);
+            font-weight: 700;
+            border: 1px solid var(--border);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(233, 116, 81, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        .cta-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 2rem;
+            line-height: 1.65;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 0.875rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-microphone {
+                font-size: 18rem;
+                right: -5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 70vh;
+            }
+
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .hero-container {
+                padding: 2rem 1rem;
+            }
+
+            .section-container {
+                padding: 0 1rem;
+            }
+
+            .about {
+                padding: 3rem 0;
+            }
+
+            .projects,
+            .services,
+            .offers,
+            .clients,
+            .cta-section {
+                padding: 3rem 0;
+            }
+
+            .about-contact {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-item,
+            .social-link {
+                justify-content: center;
+            }
+
+            /* Hide desktop nav, show mobile menu */
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero-microphone {
+                font-size: 12rem;
+                opacity: 0.5;
+            }
+
+            .experience-timeline {
+                padding: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* Make sliders touch-friendly */
+            .slider-wrapper {
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .slider-wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .projects-grid.slider-track,
+            .services-grid.slider-track {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+
+            .projects-grid.slider-track .project-card,
+            .services-grid.slider-track .service-card {
+                flex: 0 0 280px;
+            }
+
+            .slider-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 0.75rem;
+            }
+
+            .slider-prev {
+                left: -8px;
+            }
+
+            .slider-next {
+                right: -8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.125rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-title {
+                font-size: 1rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.9375rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-microphone {
+                font-size: 8rem;
+                right: -10%;
+            }
+
+            .mobile-menu-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .timeline-title {
+                font-size: 1.125rem;
+            }
+
+            .timeline-company {
+                font-size: 1rem;
+            }
+
+            .projects-grid.slider-track .project-card,
+            .services-grid.slider-track .service-card {
+                flex: 0 0 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="logo">RJ <span>Aadhira</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Panel -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="mobile-menu-nav">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-microphone">
+            <i class="fa-solid fa-microphone-lines"></i>
+        </div>
+        <div class="hero-waveform">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label">Voice That Captivates</div>
+                <h1>RJ Aadhira</h1>
+                <div class="hero-title">EX Radio Jockey & Multilingual Dubbing Artist</div>
+                <div class="hero-languages">
+                    <span class="lang-badge"><i class="fas fa-language"></i> Tamil</span>
+                    <span class="lang-badge"><i class="fas fa-language"></i> English</span>
+                    <span class="lang-badge"><i class="fas fa-language"></i> Malayalam</span>
+                    <span class="lang-badge"><i class="fas fa-language"></i> Kannada</span>
+                </div>
+                <p class="hero-tagline">
+                    Bringing stories to life across languages, platforms, and emotions. Your voice, amplified with passion and precision.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Now
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">About Me</div>
+                <h2 class="section-title">Voice Artist. Storyteller. Creator.</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='533'%3E%3Crect fill='%23f0f0f0' width='400' height='533'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23999'%3EAadhira%3C/text%3E%3C/svg%3E" alt="Aadhira">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text">
+                        With a voice that resonates across languages and cultures, I bring authenticity and emotion to every project. From radio waves to dubbing studios, from corporate narratives to cinematic characters, my versatile talent transforms words into unforgettable experiences.
+                    </p>
+                    <p class="about-text">
+                        Fluent in Tamil, English, Malayalam, and Kannada, I seamlessly adapt to diverse audiences and contexts, making me the preferred choice for brands, filmmakers, and content creators who demand excellence.
+                    </p>
+                    
+                    <!-- Experience Timeline -->
+                    <div class="experience-timeline">
+                        <h3 class="timeline-title">Professional Journey</h3>
+                        <div class="timeline-items">
+                            <div class="timeline-item" data-index="0">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-radio"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-company">Salem Thozha FM</h4>
+                                    <div class="timeline-duration">1.5 Years</div>
+                                    <div class="timeline-role">Vanakkam Thozha - Prime Time 8-11 AM</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-index="1">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-company">Covai Film Studio</h4>
+                                    <div class="timeline-duration">1 Year</div>
+                                    <div class="timeline-role">Dubbing Artist</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-index="2">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-microphone-lines"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-company">Voice Fully Studios</h4>
+                                    <div class="timeline-duration">2 Years</div>
+                                    <div class="timeline-role">Voice Over Artist</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number" data-target="4">0</span>
+                            <div class="highlight-label">Years Experience</div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number" data-target="20">0</span>
+                            <div class="highlight-label">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="about-contact" id="contact">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">+91 9043622745</div>
+                        </div>
+                        <a href="https://www.instagram.com/rj_aadhira?igsh=dXNtaG1zb3JxaGls" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            Follow on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Portfolio</div>
+                <h2 class="section-title">Browse Projects by Category</h2>
+            </div>
+            <div class="slider-container">
+                <button class="slider-arrow slider-prev" data-slider="projects">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-wrapper">
+                    <div class="projects-grid slider-track" id="projectsSlider">
+                        <a href="https://drive.google.com/drive/folders/18Gn9Jlde26YRJTr0-A0kSUbIHmIeInH6" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-bullhorn project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Advertisement Dubbing</h3>
+                                <p class="project-desc">Compelling voice-overs that make brands unforgettable. From television to digital, every word counts.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://drive.google.com/drive/folders/1XCkgRAyHDzdOerH7oW_FFB92aekmmBnx" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-masks-theater project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Anime</h3>
+                                <p class="project-desc">Bringing animated characters to life with emotion, energy, and perfect timing across languages.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://drive.google.com/drive/folders/1jLVMB4VTtnQePqHtBPzQLvBNsYuFVTxt" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-phone-volume project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">IVRS</h3>
+                                <p class="project-desc">Professional, clear, and welcoming voice prompts for interactive voice response systems.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://drive.google.com/drive/folders/1Zzi7GgJaCqrpVkJvVZ9KK1Fsdo7qaJmi" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-film project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Movies & Series</h3>
+                                <p class="project-desc">Authentic dubbing and voice acting that captures the essence of every character and scene.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://drive.google.com/drive/folders/1X7-bcrGYd3ye5hQyNgKNzjjJOz5jHkye" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-microphone project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Podcast</h3>
+                                <p class="project-desc">Engaging narration that keeps listeners hooked from start to finish.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://drive.google.com/drive/folders/1k5m7j8gbJ6YMyzzvPweAWg8NT13QpzL3" class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-volume-high project-icon"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Voice Over</h3>
+                                <p class="project-desc">Corporate, documentary, and commercial voice-overs delivered with clarity and impact.</p>
+                                <div class="project-link">
+                                    View Projects
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="slider-arrow slider-next" data-slider="projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Our Services</h2>
+            </div>
+            <div class="slider-container">
+                <button class="slider-arrow slider-prev" data-slider="services">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-wrapper">
+                    <div class="services-grid slider-track" id="servicesSlider">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-microphone-lines"></i>
+                            </div>
+                            <h3 class="service-title">Voice Overs</h3>
+                            <p class="service-desc">Professional voice-over services for commercials, documentaries, corporate videos, and more in multiple languages.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="service-title">Dubbing</h3>
+                            <p class="service-desc">Expert dubbing services for films, series, anime, and digital content with precise lip-sync and emotion.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 class="service-title">Video Shoot & Edit</h3>
+                            <p class="service-desc">Complete video production from concept to final cut, perfect for social media, ads, and brand content.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-pen-nib"></i>
+                            </div>
+                            <h3 class="service-title">Content Creation</h3>
+                            <p class="service-desc">Engaging content for digital platforms, podcasts, and social media that resonates with your audience.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="service-title">Anchoring</h3>
+                            <p class="service-desc">Dynamic anchoring for events, shows, and radio broadcasts with energy and professionalism.</p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-champagne-glasses"></i>
+                            </div>
+                            <h3 class="service-title">Master of Ceremonies (EMCEE)</h3>
+                            <p class="service-desc">Sophisticated event hosting for corporate functions, weddings, and special occasions.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow slider-next" data-slider="services">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">What We Offer</h2>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="offer-title">Fast Delivery</h3>
+                    <p class="offer-desc">Quick turnaround times without compromising on quality. Your deadlines are our priority.</p>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="offer-title">Studio Quality</h3>
+                    <p class="offer-desc">Broadcast-ready audio recorded in professional studio conditions with top-tier equipment.</p>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="offer-title">Multilingual</h3>
+                    <p class="offer-desc">Fluent in Tamil, English, Malayalam, and Kannada - reaching diverse audiences effortlessly.</p>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="offer-title">Broadcast Ready</h3>
+                    <p class="offer-desc">Professional-grade output ready for TV, radio, streaming platforms, and digital media.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Trusted By</div>
+                <h2 class="section-title">Our Prime Clients</h2>
+            </div>
+            <div class="clients-showcase">
+                <button class="slider-arrow slider-prev" data-slider="clients">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="clients-scroll">
+                    <div class="clients-track">
+                        <div class="client-card">
+                            <div class="client-logo">JA</div>
+                            <div class="client-name">Jos Alukkas</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">TCS</div>
+                            <div class="client-name">The Chennai Silks</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">PSR</div>
+                            <div class="client-name">PSR Thangamaligai</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">KK</div>
+                            <div class="client-name">Kuku FM</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">PF</div>
+                            <div class="client-name">Pocket FM</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">KM</div>
+                            <div class="client-name">KMCH Hospital</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AN</div>
+                            <div class="client-name">Anandhas</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AT</div>
+                            <div class="client-name">Anamalais Toyota</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">RF</div>
+                            <div class="client-name">Royal Fitness Gym</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">HD</div>
+                            <div class="client-name">HDFC</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">IC</div>
+                            <div class="client-name">ICICI</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">SM</div>
+                            <div class="client-name">Satvik Movements</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AM</div>
+                            <div class="client-name">AM Collections</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">SG</div>
+                            <div class="client-name">Stanes Garden Center</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">MM</div>
+                            <div class="client-name">Mayil Mark Samba Ravai</div>
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="clients-track" aria-hidden="true">
+                        <div class="client-card">
+                            <div class="client-logo">JA</div>
+                            <div class="client-name">Jos Alukkas</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">TCS</div>
+                            <div class="client-name">The Chennai Silks</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">PSR</div>
+                            <div class="client-name">PSR Thangamaligai</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">KK</div>
+                            <div class="client-name">Kuku FM</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">PF</div>
+                            <div class="client-name">Pocket FM</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">KM</div>
+                            <div class="client-name">KMCH Hospital</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AN</div>
+                            <div class="client-name">Anandhas</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AT</div>
+                            <div class="client-name">Anamalais Toyota</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">RF</div>
+                            <div class="client-name">Royal Fitness Gym</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">HD</div>
+                            <div class="client-name">HDFC</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">IC</div>
+                            <div class="client-name">ICICI</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">SM</div>
+                            <div class="client-name">Satvik Movements</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">AM</div>
+                            <div class="client-name">AM Collections</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">SG</div>
+                            <div class="client-name">Stanes Garden Center</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo">MM</div>
+                            <div class="client-name">Mayil Mark Samba Ravai</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow slider-next" data-slider="clients">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Let's Create Something Amazing Together</h2>
+                <p class="cta-text">Ready to elevate your project with a voice that connects? Get in touch and let's bring your vision to life.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        Start a Project
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        Learn More
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        const scrollProgress = document.getElementById('scrollProgress');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Update scroll progress
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // Scroll animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.section-header, .about-image, .about-content, .project-card, .service-card, .offer-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Experience Timeline Animation
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.timeline-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 150);
+                    });
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const timeline = document.querySelector('.experience-timeline');
+        if (timeline) {
+            timelineObserver.observe(timeline);
+        }
+
+        // Animated counters
+        const counters = document.querySelectorAll('.highlight-number');
+        const counterSpeed = 200;
+
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const increment = target / counterSpeed;
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.ceil(current) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Slider System
+        function initSlider(sliderType) {
+            const container = document.querySelector(`[data-slider="${sliderType}"]`)?.closest('.slider-container') || document.querySelector('.clients-showcase');
+            if (!container) return;
+
+            const track = container.querySelector('.slider-track') || container.querySelector('.clients-scroll');
+            const prevBtn = container.querySelector('[data-slider="' + sliderType + '"].slider-prev');
+            const nextBtn = container.querySelector('[data-slider="' + sliderType + '"].slider-next');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+
+            let scrollPosition = 0;
+            const cardWidth = sliderType === 'projects' || sliderType === 'services' ? 320 : 200;
+            const gap = 20;
+            const scrollAmount = cardWidth + gap;
+
+            function updateButtons() {
+                if (sliderType === 'clients') return; // Clients don't need button updates
+                const maxScroll = track.scrollWidth - track.clientWidth;
+                prevBtn.style.opacity = scrollPosition <= 0 ? '0.3' : '1';
+                prevBtn.style.pointerEvents = scrollPosition <= 0 ? 'none' : 'auto';
+                nextBtn.style.opacity = scrollPosition >= maxScroll ? '0.3' : '1';
+                nextBtn.style.pointerEvents = scrollPosition >= maxScroll ? 'none' : 'auto';
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (sliderType === 'clients') {
+                    const currentTransform = getComputedStyle(track).transform;
+                    const matrix = new DOMMatrix(currentTransform);
+                    const currentX = matrix.m41;
+                    
+                    track.style.animation = 'none';
+                    track.style.transform = `translateX(${currentX + 300}px)`;
+                    
+                    setTimeout(() => {
+                        track.style.animation = 'scroll 40s linear infinite';
+                    }, 500);
+                } else {
+                    scrollPosition = Math.max(0, scrollPosition - scrollAmount);
+                    track.style.transform = `translateX(-${scrollPosition}px)`;
+                    updateButtons();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (sliderType === 'clients') {
+                    const currentTransform = getComputedStyle(track).transform;
+                    const matrix = new DOMMatrix(currentTransform);
+                    const currentX = matrix.m41;
+                    
+                    track.style.animation = 'none';
+                    track.style.transform = `translateX(${currentX - 300}px)`;
+                    
+                    setTimeout(() => {
+                        track.style.animation = 'scroll 40s linear infinite';
+                    }, 500);
+                } else {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    scrollPosition = Math.min(maxScroll, scrollPosition + scrollAmount);
+                    track.style.transform = `translateX(-${scrollPosition}px)`;
+                    updateButtons();
+                }
+            });
+
+            updateButtons();
+        }
+
+        // Initialize sliders for desktop only
+        if (window.innerWidth > 768) {
+            initSlider('projects');
+            initSlider('services');
+        }
+        initSlider('clients'); // Always initialize clients
+
+        // Mobile Menu
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav a');
+
+        function openMobileMenu() {
+            mobileMenuToggle.classList.add('active');
+            mobileMenuPanel.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuPanel.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                if (mobileMenuPanel.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 60;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Subtle parallax for hero
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroContent = document.querySelector('.hero-content');
+                    if (heroContent && scrolled < window.innerHeight) {
+                        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+                        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Responsive Slider Handling
+        function handleResponsiveSliders() {
+            const projectsGrid = document.getElementById('projectsSlider');
+            const servicesGrid = document.getElementById('servicesSlider');
+            
+            if (window.innerWidth <= 768) {
+                // Mobile: Reset transform, let native scroll work
+                if (projectsGrid) projectsGrid.style.transform = 'none';
+                if (servicesGrid) servicesGrid.style.transform = 'none';
+            } else {
+                // Desktop: Re-initialize sliders
+                initSlider('projects');
+                initSlider('services');
+            }
+        }
+
+        window.addEventListener('resize', handleResponsiveSliders);
+        handleResponsiveSliders();
+    </script>
+</body>
+</html>
