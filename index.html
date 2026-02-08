@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RJ Aadhira | EX Radio Jockey & Multilingual Voice Artist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -43,7 +45,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+
         }
+
 
         /* Navigation */
         .nav {
@@ -95,7 +99,7 @@
         }
 
         .nav-links a {
-            color: var(--text-gray);
+            color: black;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.875rem;
@@ -249,8 +253,8 @@
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 28rem;
-            color: rgba(255, 255, 255, 0.03);
+            font-size: 23rem;
+            color: rgb(49 36 32);
             pointer-events: none;
             z-index: 1;
         }
@@ -276,13 +280,28 @@
             animation: wave 2s ease-in-out infinite;
         }
 
-        .wave-bar:nth-child(2n) { animation-delay: 0.1s; }
-        .wave-bar:nth-child(3n) { animation-delay: 0.2s; }
-        .wave-bar:nth-child(4n) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+
+        .wave-bar:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+
+        .wave-bar:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
 
         @keyframes wave {
-            0%, 100% { height: 30%; }
-            50% { height: 80%; }
+
+            0%,
+            100% {
+                height: 30%;
+            }
+
+            50% {
+                height: 80%;
+            }
         }
 
         .hero-container {
@@ -323,7 +342,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: 4rem;
             font-weight: 800;
             color: #FFFFFF;
             line-height: 1.1;
@@ -431,14 +450,14 @@
         .section-label {
             color: var(--primary);
             font-weight: 600;
-            font-size: 0.8125rem;
+            font-size: 2rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
         .section-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-size: clamp(1.75rem, 4vw, 1.5rem);
             font-weight: 800;
             color: var(--text-dark);
             line-height: 1.2;
@@ -455,7 +474,7 @@
             display: grid;
             grid-template-columns: 1fr 1.3fr;
             gap: 3rem;
-            align-items: center;
+            /* align-items: center; */
         }
 
         .about-image {
@@ -487,11 +506,11 @@
         .about-image-wrapper::before {
             content: '';
             position: absolute;
-            top: 12px;
-            left: 12px;
-            right: 12px;
-            bottom: 12px;
-            border: 2px solid var(--primary);
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            border: 7px solid var(--primary);
             border-radius: 8px;
             z-index: 1;
             pointer-events: none;
@@ -520,11 +539,13 @@
         }
 
         .about-text {
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            color: var(--text-gray);
+            font-size: 1rem;
+            /* line-height: 1.7; */
+            color: black;
             margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
+            /* letter-spacing: -0.01em; */
+            /* text-align: justify; */
+            padding: 7px;
         }
 
         /* Experience Timeline */
@@ -680,6 +701,36 @@
             font-size: 0.875rem;
         }
 
+        .contact-text a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+            border-radius: 8px;
+
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #E97451;
+            /* matches your orange theme */
+
+            background: rgba(255, 107, 61, 0.1);
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            background: #E97451;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 107, 61, 0.35);
+        }
+
+        .contact-text i {
+            font-size: 0.9rem;
+        }
+
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -699,6 +750,96 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(193, 53, 132, 0.3);
         }
+
+        /* About Image Section with Social Links */
+        .about-image-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Social Links Container Below Image */
+        .social-links-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .social-link-item {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link-item:hover::before {
+            opacity: 1;
+        }
+
+        .social-link-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Individual Social Platform Colors */
+        .social-call {
+            background: linear-gradient(135deg, #E97451, #D45A38);
+        }
+
+        .social-call:hover {
+            box-shadow: 0 8px 20px rgba(233, 116, 81, 0.4);
+        }
+
+        .social-instagram {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4, #5851DB);
+        }
+
+        .social-instagram:hover {
+            box-shadow: 0 8px 20px rgba(225, 48, 108, 0.4);
+        }
+
+        .social-linkedin {
+            background: linear-gradient(135deg, #0077B5, #005582);
+        }
+
+        .social-linkedin:hover {
+            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+        }
+
+        .social-gmail {
+            background: linear-gradient(135deg, #EA4335, #C5221F);
+        }
+
+        .social-gmail:hover {
+            box-shadow: 0 8px 20px rgba(234, 67, 53, 0.4);
+        }
+
 
         /* Projects Section */
         .projects {
@@ -789,12 +930,29 @@
             animation: fadeInUp 0.5s ease forwards;
         }
 
-        .project-card:nth-child(1) { animation-delay: 0.05s; }
-        .project-card:nth-child(2) { animation-delay: 0.1s; }
-        .project-card:nth-child(3) { animation-delay: 0.15s; }
-        .project-card:nth-child(4) { animation-delay: 0.2s; }
-        .project-card:nth-child(5) { animation-delay: 0.25s; }
-        .project-card:nth-child(6) { animation-delay: 0.3s; }
+        .project-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .project-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .project-card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
 
         .project-card:hover {
             transform: translateY(-4px);
@@ -814,6 +972,17 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
         }
 
         .project-icon {
@@ -910,17 +1079,48 @@
             animation: fadeInUp 0.5s ease forwards;
         }
 
-        .service-card:nth-child(1) { animation-delay: 0.05s; }
-        .service-card:nth-child(2) { animation-delay: 0.1s; }
-        .service-card:nth-child(3) { animation-delay: 0.15s; }
-        .service-card:nth-child(4) { animation-delay: 0.2s; }
-        .service-card:nth-child(5) { animation-delay: 0.25s; }
-        .service-card:nth-child(6) { animation-delay: 0.3s; }
+        .service-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
 
         .service-card:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: var(--primary);
             transform: translateY(-4px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .service-icon {
@@ -963,7 +1163,7 @@
 
         .offers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.25rem;
             margin-top: 2rem;
         }
@@ -990,10 +1190,21 @@
             }
         }
 
-        .offer-card:nth-child(1) { animation-delay: 0.05s; }
-        .offer-card:nth-child(2) { animation-delay: 0.1s; }
-        .offer-card:nth-child(3) { animation-delay: 0.15s; }
-        .offer-card:nth-child(4) { animation-delay: 0.2s; }
+        .offer-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .offer-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .offer-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .offer-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
 
         .offer-card:hover {
             transform: translateY(-4px);
@@ -1036,7 +1247,7 @@
         /* Clients Section */
         .clients {
             padding: 4rem 0;
-            background: var(--bg-lighter);
+            background: transparent;
         }
 
         .clients-showcase {
@@ -1057,6 +1268,7 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
@@ -1086,18 +1298,22 @@
         }
 
         .client-logo {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-light);
-            border-radius: 8px;
+            width: 100%;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 0.75rem;
-            font-size: 1.125rem;
-            color: var(--primary);
-            font-weight: 700;
-            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
         }
 
         /* CTA Section */
@@ -1169,14 +1385,40 @@
                 gap: 2.5rem;
             }
 
-            .about-image {
-                max-width: 400px;
+            .about-image-section {
+                max-width: 450px;
                 margin: 0 auto;
+                width: 100%;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .social-links-container {
+                gap: 1.25rem;
+                padding: 0;
+            }
+
+            .social-link-item {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
             }
 
             .hero-microphone {
                 font-size: 18rem;
                 right: -5%;
+            }
+
+            .hero-content {
+                margin-right: 0px;
+            }
+
+            /* Offers Grid - 2 cards per row on tablets */
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
         }
 
@@ -1209,21 +1451,34 @@
                 padding: 3rem 0;
             }
 
-            .about-contact {
-                flex-direction: column;
-                align-items: stretch;
+            /* About Section Mobile Layout */
+            .about-image-section {
+                max-width: 100%;
+                width: 100%;
             }
 
-            .contact-item,
-            .social-link {
-                justify-content: center;
+            .about-image-wrapper {
+                width: 85%;
+                margin: 0 auto;
+            }
+
+            .social-links-container {
+                margin-top: 1.5rem;
+                gap: 1rem;
+                padding: 0;
+            }
+
+            .social-link-item {
+                width: 54px;
+                height: 54px;
+                font-size: 1.4rem;
             }
 
             /* Hide desktop nav, show mobile menu */
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu-toggle {
                 display: flex;
             }
@@ -1242,6 +1497,29 @@
                 gap: 1rem;
             }
 
+            /* CRITICAL FIX: Force visibility on mobile sliders */
+            .projects-grid.slider-track,
+            .services-grid.slider-track {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .projects-grid.slider-track .project-card,
+            .services-grid.slider-track .service-card {
+                flex: 0 0 280px !important;
+                max-width: 280px !important;
+                min-width: 280px !important;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            /* Ensure cards are visible regardless of animation state */
+            .project-card,
+            .service-card {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
             /* Make sliders touch-friendly */
             .slider-wrapper {
                 overflow-x: auto;
@@ -1253,18 +1531,6 @@
 
             .slider-wrapper::-webkit-scrollbar {
                 display: none;
-            }
-
-            .projects-grid.slider-track,
-            .services-grid.slider-track {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-            }
-
-            .projects-grid.slider-track .project-card,
-            .services-grid.slider-track .service-card {
-                flex: 0 0 280px;
             }
 
             .slider-arrow {
@@ -1280,15 +1546,55 @@
             .slider-next {
                 right: -8px;
             }
+
+            /* Offers Grid - 2 cards per row on mobile with reduced sizes */
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.875rem;
+            }
+
+            .offer-card {
+                padding: 1.25rem 0.875rem;
+            }
+
+            .offer-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.125rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .offer-title {
+                font-size: 0.875rem;
+                margin-bottom: 0.375rem;
+            }
+
+            .offer-desc {
+                font-size: 0.75rem;
+                line-height: 1.5;
+            }
         }
 
+        /* SMALL MOBILE DEVICES */
         @media (max-width: 480px) {
             .logo {
                 font-size: 1.125rem;
             }
 
-            .hero h1 {
-                font-size: 2.25rem;
+            .about-image-wrapper {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .social-links-container {
+                gap: 0.875rem;
+                margin-top: 1.25rem;
+            }
+
+            .social-link-item {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
             }
 
             .hero-title {
@@ -1299,17 +1605,17 @@
                 font-size: 0.9375rem;
             }
 
-            .hero-cta {
-                flex-direction: column;
-            }
-
             .btn {
                 width: 100%;
                 justify-content: center;
             }
 
+            .section-label {
+                font-size: 1rem;
+            }
+
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             .about-highlights {
@@ -1336,11 +1642,65 @@
 
             .projects-grid.slider-track .project-card,
             .services-grid.slider-track .service-card {
-                flex: 0 0 260px;
+                flex: 0 0 260px !important;
+                max-width: 260px !important;
+                min-width: 260px !important;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
+            .hero-label {
+                font-size: 0.65rem;
+            }
+
+            /* Offers Grid - Even smaller for small mobile */
+            .offers-grid {
+                gap: 0.75rem;
+            }
+
+            .offer-card {
+                padding: 1rem 0.75rem;
+            }
+
+            .offer-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                margin-bottom: 0.625rem;
+            }
+
+            .offer-title {
+                font-size: 0.8125rem;
+            }
+
+            .offer-desc {
+                font-size: 0.6875rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-languages {
+                flex-wrap: nowrap;
+            }
+        }
+
+        /* VERY SMALL DEVICES (iPhone SE, etc) */
+        @media (max-width: 375px) {
+
+            .projects-grid.slider-track .project-card,
+            .services-grid.slider-track .service-card {
+                flex: 0 0 240px !important;
+                max-width: 240px !important;
+                min-width: 240px !important;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -1419,9 +1779,6 @@
                     <span class="lang-badge"><i class="fas fa-language"></i> Malayalam</span>
                     <span class="lang-badge"><i class="fas fa-language"></i> Kannada</span>
                 </div>
-                <p class="hero-tagline">
-                    Bringing stories to life across languages, platforms, and emotions. Your voice, amplified with passion and precision.
-                </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">
                         Explore Projects
@@ -1444,19 +1801,42 @@
                 <h2 class="section-title">Voice Artist. Storyteller. Creator.</h2>
             </div>
             <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-image-wrapper">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='533'%3E%3Crect fill='%23f0f0f0' width='400' height='533'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23999'%3EAadhira%3C/text%3E%3C/svg%3E" alt="Aadhira">
+                <div class="about-image-section">
+                    <div class="about-image">
+                        <div class="about-image-wrapper">
+                            <img src="/home/gowtham/Desktop/Aadhira Portfolio/IMG-20260117-WA0005.jpg.jpeg"
+                                alt="My Image">
+                        </div>
+                    </div>
+
+                    <!-- Social Links Below Image -->
+                    <div class="social-links-container">
+                        <a href="tel:+919043622745" class="social-link-item social-call" aria-label="Call">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rj_aadhira?igsh=dXNtaG1zb3JxaGls" target="_blank"
+                            class="social-link-item social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aadhira-krishnan-2079a4397?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" class="social-link-item social-linkedin" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:aadhinarayana2905@gmail.com" class="social-link-item social-gmail"
+                            aria-label="Gmail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div class="about-content">
                     <p class="about-text">
-                        With a voice that resonates across languages and cultures, I bring authenticity and emotion to every project. From radio waves to dubbing studios, from corporate narratives to cinematic characters, my versatile talent transforms words into unforgettable experiences.
+                        My voice resonates across languages and cultures, bringing authenticity and emotion to every
+                        project. From radio waves to dubbing studios, corporate narratives to cinematic characters, I
+                        turn words into unforgettable experiences.Fluent in Tamil, English, Malayalam, and Kannada, I
+                        adapt seamlessly for brands, filmmakers, and creators who demand excellence.
                     </p>
-                    <p class="about-text">
-                        Fluent in Tamil, English, Malayalam, and Kannada, I seamlessly adapt to diverse audiences and contexts, making me the preferred choice for brands, filmmakers, and content creators who demand excellence.
-                    </p>
-                    
+
                     <!-- Experience Timeline -->
                     <div class="experience-timeline">
                         <h3 class="timeline-title">Professional Journey</h3>
@@ -1504,18 +1884,6 @@
                             <div class="highlight-label">Projects Completed</div>
                         </div>
                     </div>
-                    <div class="about-contact" id="contact">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">+91 9043622745</div>
-                        </div>
-                        <a href="https://www.instagram.com/rj_aadhira?igsh=dXNtaG1zb3JxaGls" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                            Follow on Instagram
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1525,8 +1893,8 @@
     <section class="projects" id="projects">
         <div class="section-container">
             <div class="section-header">
-                <div class="section-label">Portfolio</div>
-                <h2 class="section-title">Browse Projects by Category</h2>
+                <div class="section-label"></div>
+                <h2 class="section-title">Project Categories</h2>
             </div>
             <div class="slider-container">
                 <button class="slider-arrow slider-prev" data-slider="projects">
@@ -1534,13 +1902,17 @@
                 </button>
                 <div class="slider-wrapper">
                     <div class="projects-grid slider-track" id="projectsSlider">
-                        <a href="https://drive.google.com/drive/folders/18Gn9Jlde26YRJTr0-A0kSUbIHmIeInH6" class="project-card">
+                        <!-- Original Cards -->
+                        <a href="https://drive.google.com/drive/folders/18Gn9Jlde26YRJTr0-A0kSUbIHmIeInH6"
+                            class="project-card" data-project="ad-dubbing">
                             <div class="project-image">
-                                <i class="fas fa-bullhorn project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Audio Architect.jpeg"
+                                    alt="Advertisement Dubbing">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Advertisement Dubbing</h3>
-                                <p class="project-desc">Compelling voice-overs that make brands unforgettable. From television to digital, every word counts.</p>
+                                <p class="project-desc">Compelling voice-overs that make brands unforgettable. From
+                                    television to digital, every word counts.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1548,13 +1920,15 @@
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1XCkgRAyHDzdOerH7oW_FFB92aekmmBnx" class="project-card">
+                        <a href="https://drive.google.com/drive/folders/1XCkgRAyHDzdOerH7oW_FFB92aekmmBnx"
+                            class="project-card" data-project="anime">
                             <div class="project-image">
-                                <i class="fas fa-masks-theater project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/uchiha gang.jpeg" alt="Anime">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Anime</h3>
-                                <p class="project-desc">Bringing animated characters to life with emotion, energy, and perfect timing across languages.</p>
+                                <p class="project-desc">Bringing animated characters to life with emotion, energy, and
+                                    perfect timing across languages.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1562,13 +1936,15 @@
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1jLVMB4VTtnQePqHtBPzQLvBNsYuFVTxt" class="project-card">
+                        <a href="https://drive.google.com/drive/folders/1jLVMB4VTtnQePqHtBPzQLvBNsYuFVTxt"
+                            class="project-card" data-project="ivrs">
                             <div class="project-image">
-                                <i class="fas fa-phone-volume project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/IVRS.jpeg" alt="IVRS">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">IVRS</h3>
-                                <p class="project-desc">Professional, clear, and welcoming voice prompts for interactive voice response systems.</p>
+                                <p class="project-desc">Professional, clear, and welcoming voice prompts for interactive
+                                    voice response systems.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1576,13 +1952,15 @@
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1Zzi7GgJaCqrpVkJvVZ9KK1Fsdo7qaJmi" class="project-card">
+                        <a href="https://drive.google.com/drive/folders/1Zzi7GgJaCqrpVkJvVZ9KK1Fsdo7qaJmi"
+                            class="project-card" data-project="movies">
                             <div class="project-image">
-                                <i class="fas fa-film project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Netflix.jpeg" alt="Movies & Series">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Movies & Series</h3>
-                                <p class="project-desc">Authentic dubbing and voice acting that captures the essence of every character and scene.</p>
+                                <p class="project-desc">Authentic dubbing and voice acting that captures the essence of
+                                    every character and scene.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1590,13 +1968,16 @@
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1X7-bcrGYd3ye5hQyNgKNzjjJOz5jHkye" class="project-card">
+                        <a href="https://drive.google.com/drive/folders/1X7-bcrGYd3ye5hQyNgKNzjjJOz5jHkye"
+                            class="project-card" data-project="podcast">
                             <div class="project-image">
-                                <i class="fas fa-microphone project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Podcast Photos - Download Free High-Quality Pictures _ Freepik.jpeg"
+                                    alt="Podcast">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Podcast</h3>
-                                <p class="project-desc">Engaging narration that keeps listeners hooked from start to finish.</p>
+                                <p class="project-desc">Engaging narration that keeps listeners hooked from start to
+                                    finish.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1604,13 +1985,15 @@
                             </div>
                         </a>
 
-                        <a href="https://drive.google.com/drive/folders/1k5m7j8gbJ6YMyzzvPweAWg8NT13QpzL3" class="project-card">
+                        <a href="https://drive.google.com/drive/folders/1k5m7j8gbJ6YMyzzvPweAWg8NT13QpzL3"
+                            class="project-card" data-project="voiceover">
                             <div class="project-image">
-                                <i class="fas fa-volume-high project-icon"></i>
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/AI Voice.jpg" alt="Voice Over">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Voice Over</h3>
-                                <p class="project-desc">Corporate, documentary, and commercial voice-overs delivered with clarity and impact.</p>
+                                <p class="project-desc">Corporate, documentary, and commercial voice-overs delivered
+                                    with clarity and impact.</p>
                                 <div class="project-link">
                                     View Projects
                                     <i class="fas fa-arrow-right"></i>
@@ -1639,52 +2022,62 @@
                 </button>
                 <div class="slider-wrapper">
                     <div class="services-grid slider-track" id="servicesSlider">
+                        <!-- Original Cards -->
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-microphone-lines"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Voiceover.jpeg" alt="Voice Overs">
                             </div>
                             <h3 class="service-title">Voice Overs</h3>
-                            <p class="service-desc">Professional voice-over services for commercials, documentaries, corporate videos, and more in multiple languages.</p>
+                            <p class="service-desc">Professional voice-over services for commercials, documentaries,
+                                corporate videos, and more in multiple languages.</p>
                         </div>
 
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-comments"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/dubbing.jpeg" alt="Dubbing">
                             </div>
                             <h3 class="service-title">Dubbing</h3>
-                            <p class="service-desc">Expert dubbing services for films, series, anime, and digital content with precise lip-sync and emotion.</p>
+                            <p class="service-desc">Expert dubbing services for films, series, anime, and digital
+                                content with precise lip-sync and emotion.</p>
                         </div>
 
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-video"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Vidoeshootedit.jpeg"
+                                    alt="Video Shoot & Edit">
                             </div>
                             <h3 class="service-title">Video Shoot & Edit</h3>
-                            <p class="service-desc">Complete video production from concept to final cut, perfect for social media, ads, and brand content.</p>
+                            <p class="service-desc">Complete video production from concept to final cut, perfect for
+                                social media, ads, and brand content.</p>
                         </div>
 
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-pen-nib"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Content_creation.jpeg"
+                                    alt="Content Creation">
                             </div>
                             <h3 class="service-title">Content Creation</h3>
-                            <p class="service-desc">Engaging content for digital platforms, podcasts, and social media that resonates with your audience.</p>
+                            <p class="service-desc">Engaging content for digital platforms, podcasts, and social media
+                                that resonates with your audience.</p>
                         </div>
 
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-user-tie"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Anchor.jpeg" alt="Anchoring">
                             </div>
                             <h3 class="service-title">Anchoring</h3>
-                            <p class="service-desc">Dynamic anchoring for events, shows, and radio broadcasts with energy and professionalism.</p>
+                            <p class="service-desc">Dynamic anchoring for events, shows, and radio broadcasts with
+                                energy and professionalism.</p>
                         </div>
 
                         <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-champagne-glasses"></i>
+                            <div class="service-image">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/masterofcere.jpeg"
+                                    alt="Master of Ceremonies">
                             </div>
                             <h3 class="service-title">Master of Ceremonies (EMCEE)</h3>
-                            <p class="service-desc">Sophisticated event hosting for corporate functions, weddings, and special occasions.</p>
+                            <p class="service-desc">Sophisticated event hosting for corporate functions, weddings, and
+                                special occasions.</p>
                         </div>
                     </div>
                 </div>
@@ -1708,7 +2101,8 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3 class="offer-title">Fast Delivery</h3>
-                    <p class="offer-desc">Quick turnaround times without compromising on quality. Your deadlines are our priority.</p>
+                    <p class="offer-desc">Quick turnaround times without compromising on quality. Your deadlines are our
+                        priority.</p>
                 </div>
 
                 <div class="offer-card">
@@ -1716,7 +2110,8 @@
                         <i class="fas fa-gem"></i>
                     </div>
                     <h3 class="offer-title">Studio Quality</h3>
-                    <p class="offer-desc">Broadcast-ready audio recorded in professional studio conditions with top-tier equipment.</p>
+                    <p class="offer-desc">Broadcast-ready audio recorded in professional studio conditions with top-tier
+                        equipment.</p>
                 </div>
 
                 <div class="offer-card">
@@ -1724,7 +2119,8 @@
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3 class="offer-title">Multilingual</h3>
-                    <p class="offer-desc">Fluent in Tamil, English, Malayalam, and Kannada - reaching diverse audiences effortlessly.</p>
+                    <p class="offer-desc">Fluent in Tamil, English, Malayalam, and Kannada - reaching diverse audiences
+                        effortlessly.</p>
                 </div>
 
                 <div class="offer-card">
@@ -1732,7 +2128,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3 class="offer-title">Broadcast Ready</h3>
-                    <p class="offer-desc">Professional-grade output ready for TV, radio, streaming platforms, and digital media.</p>
+                    <p class="offer-desc">Professional-grade output ready for TV, radio, streaming platforms, and
+                        digital media.</p>
                 </div>
             </div>
         </div>
@@ -1746,139 +2143,194 @@
                 <h2 class="section-title">Our Prime Clients</h2>
             </div>
             <div class="clients-showcase">
-                <button class="slider-arrow slider-prev" data-slider="clients">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
                 <div class="clients-scroll">
                     <div class="clients-track">
                         <div class="client-card">
-                            <div class="client-logo">JA</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Joyalukkas.png" alt="Jos Alukkas">
+                            </div>
                             <div class="client-name">Jos Alukkas</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">TCS</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/Chennaisilks.png"
+                                    alt="The Chennai Silks">
+                            </div>
                             <div class="client-name">The Chennai Silks</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">PSR</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/PSR.png" alt="PSR Thangamaligai">
+                            </div>
                             <div class="client-name">PSR Thangamaligai</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">KK</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/KUKU.png" alt="Kuku FM">
+                            </div>
                             <div class="client-name">Kuku FM</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">PF</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/pocketfm.png" alt="Pocket FM">
+                            </div>
                             <div class="client-name">Pocket FM</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">KM</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/KMCH.png" alt="KMCH Hospital">
+                            </div>
                             <div class="client-name">KMCH Hospital</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AN</div>
+                            <div class="client-logo">
+                                <img src="/home/gowtham/Desktop/Aadhira Portfolio/anandhas.png" alt="Anandhas">
+                            </div>
                             <div class="client-name">Anandhas</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AT</div>
+                            <div class="client-logo">
+                                <img src="placeholder-toyota.png" alt="Anamalais Toyota">
+                            </div>
                             <div class="client-name">Anamalais Toyota</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">RF</div>
+                            <div class="client-logo">
+                                <img src="placeholder-royalfitness.png" alt="Royal Fitness Gym">
+                            </div>
                             <div class="client-name">Royal Fitness Gym</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">HD</div>
+                            <div class="client-logo">
+                                <img src="placeholder-hdfc.png" alt="HDFC">
+                            </div>
                             <div class="client-name">HDFC</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">IC</div>
+                            <div class="client-logo">
+                                <img src="placeholder-icici.png" alt="ICICI">
+                            </div>
                             <div class="client-name">ICICI</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">SM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-satvik.png" alt="Satvik Movements">
+                            </div>
                             <div class="client-name">Satvik Movements</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-amcollections.png" alt="AM Collections">
+                            </div>
                             <div class="client-name">AM Collections</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">SG</div>
+                            <div class="client-logo">
+                                <img src="placeholder-stanes.png" alt="Stanes Garden Center">
+                            </div>
                             <div class="client-name">Stanes Garden Center</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">MM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-mayilmark.png" alt="Mayil Mark Samba Ravai">
+                            </div>
                             <div class="client-name">Mayil Mark Samba Ravai</div>
                         </div>
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="clients-track" aria-hidden="true">
                         <div class="client-card">
-                            <div class="client-logo">JA</div>
+                            <div class="client-logo">
+                                <img src="placeholder-josalukkas.png" alt="Jos Alukkas">
+                            </div>
                             <div class="client-name">Jos Alukkas</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">TCS</div>
+                            <div class="client-logo">
+                                <img src="placeholder-chennaisilks.png" alt="The Chennai Silks">
+                            </div>
                             <div class="client-name">The Chennai Silks</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">PSR</div>
+                            <div class="client-logo">
+                                <img src="placeholder-psr.png" alt="PSR Thangamaligai">
+                            </div>
                             <div class="client-name">PSR Thangamaligai</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">KK</div>
+                            <div class="client-logo">
+                                <img src="placeholder-kukufm.png" alt="Kuku FM">
+                            </div>
                             <div class="client-name">Kuku FM</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">PF</div>
+                            <div class="client-logo">
+                                <img src="placeholder-pocketfm.png" alt="Pocket FM">
+                            </div>
                             <div class="client-name">Pocket FM</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">KM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-kmch.png" alt="KMCH Hospital">
+                            </div>
                             <div class="client-name">KMCH Hospital</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AN</div>
+                            <div class="client-logo">
+                                <img src="placeholder-anandhas.png" alt="Anandhas">
+                            </div>
                             <div class="client-name">Anandhas</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AT</div>
+                            <div class="client-logo">
+                                <img src="placeholder-toyota.png" alt="Anamalais Toyota">
+                            </div>
                             <div class="client-name">Anamalais Toyota</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">RF</div>
+                            <div class="client-logo">
+                                <img src="placeholder-royalfitness.png" alt="Royal Fitness Gym">
+                            </div>
                             <div class="client-name">Royal Fitness Gym</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">HD</div>
+                            <div class="client-logo">
+                                <img src="placeholder-hdfc.png" alt="HDFC">
+                            </div>
                             <div class="client-name">HDFC</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">IC</div>
+                            <div class="client-logo">
+                                <img src="placeholder-icici.png" alt="ICICI">
+                            </div>
                             <div class="client-name">ICICI</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">SM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-satvik.png" alt="Satvik Movements">
+                            </div>
                             <div class="client-name">Satvik Movements</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">AM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-amcollections.png" alt="AM Collections">
+                            </div>
                             <div class="client-name">AM Collections</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">SG</div>
+                            <div class="client-logo">
+                                <img src="placeholder-stanes.png" alt="Stanes Garden Center">
+                            </div>
                             <div class="client-name">Stanes Garden Center</div>
                         </div>
                         <div class="client-card">
-                            <div class="client-logo">MM</div>
+                            <div class="client-logo">
+                                <img src="placeholder-mayilmark.png" alt="Mayil Mark Samba Ravai">
+                            </div>
                             <div class="client-name">Mayil Mark Samba Ravai</div>
                         </div>
                     </div>
                 </div>
-                <button class="slider-arrow slider-next" data-slider="clients">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
@@ -1888,7 +2340,8 @@
         <div class="section-container">
             <div class="cta-content">
                 <h2 class="cta-title">Let's Create Something Amazing Together</h2>
-                <p class="cta-text">Ready to elevate your project with a voice that connects? Get in touch and let's bring your vision to life.</p>
+                <p class="cta-text">Ready to elevate your project with a voice that connects? Get in touch and let's
+                    bring your vision to life.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
                         Start a Project
@@ -1904,268 +2357,511 @@
     </section>
 
     <script>
-        // Navigation scroll effect
+        // =============================================================
+        // NAV SCROLL
+        // =============================================================
         const nav = document.getElementById('nav');
         const scrollProgress = document.getElementById('scrollProgress');
-        
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
 
-            // Update scroll progress
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const winScroll = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            scrollProgress.style.width = scrolled + '%';
+            scrollProgress.style.width = (winScroll / height) * 100 + '%';
         });
 
-        // Scroll animations with Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
-        const observer = new IntersectionObserver((entries) => {
+        // =============================================================
+        // SCROLL ANIMATIONS
+        // =============================================================
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        // Observe all animated elements
-        document.querySelectorAll('.section-header, .about-image, .about-content, .project-card, .service-card, .offer-card').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.section-header, .about-image, .about-content, .project-card, .service-card, .offer-card')
+            .forEach(el => observer.observe(el));
 
-        // Experience Timeline Animation
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const items = entry.target.querySelectorAll('.timeline-item');
-                    items.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 150);
-                    });
-                    timelineObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
 
+        // =============================================================
+        // EXPERIENCE TIMELINE
+        // =============================================================
         const timeline = document.querySelector('.experience-timeline');
         if (timeline) {
+            const timelineObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.timeline-item')
+                            .forEach((item, i) => setTimeout(() => item.classList.add('visible'), i * 150));
+                        timelineObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
             timelineObserver.observe(timeline);
         }
 
-        // Animated counters
+
+        // =============================================================
+        // COUNTERS
+        // =============================================================
         const counters = document.querySelectorAll('.highlight-number');
-        const counterSpeed = 200;
 
-        const animateCounter = (counter) => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const increment = target / counterSpeed;
-            let current = 0;
-
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    counter.textContent = Math.ceil(current) + '+';
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target + '+';
-                }
-            };
-
-            updateCounter();
-        };
-
-        const counterObserver = new IntersectionObserver((entries) => {
+        const counterObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
-                }
+                if (!entry.isIntersecting) return;
+
+                const counter = entry.target;
+                const target = +counter.dataset.target;
+                let current = 0;
+                const speed = 300;
+                const inc = target / speed;
+
+                const update = () => {
+                    current += inc;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current) + '+';
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+
+                update();
+                counterObserver.unobserve(counter);
             });
         }, { threshold: 0.5 });
 
-        counters.forEach(counter => {
-            counterObserver.observe(counter);
-        });
+        counters.forEach(c => counterObserver.observe(c));
 
-        // Slider System
-        function initSlider(sliderType) {
-            const container = document.querySelector(`[data-slider="${sliderType}"]`)?.closest('.slider-container') || document.querySelector('.clients-showcase');
-            if (!container) return;
 
-            const track = container.querySelector('.slider-track') || container.querySelector('.clients-scroll');
-            const prevBtn = container.querySelector('[data-slider="' + sliderType + '"].slider-prev');
-            const nextBtn = container.querySelector('[data-slider="' + sliderType + '"].slider-next');
-            
-            if (!track || !prevBtn || !nextBtn) return;
+        // =============================================================
+        // TRULY INFINITE SLIDER - WORKS ON ALL DEVICES
+        // =============================================================
+        class InfiniteSlider {
+            constructor(config) {
+                this.sliderType = config.sliderType;
+                this.container = document.querySelector(config.containerSelector);
+                if (!this.container) return;
 
-            let scrollPosition = 0;
-            const cardWidth = sliderType === 'projects' || sliderType === 'services' ? 320 : 200;
-            const gap = 20;
-            const scrollAmount = cardWidth + gap;
+                this.track = this.container.querySelector(config.trackSelector);
+                if (!this.track) return;
 
-            function updateButtons() {
-                if (sliderType === 'clients') return; // Clients don't need button updates
-                const maxScroll = track.scrollWidth - track.clientWidth;
-                prevBtn.style.opacity = scrollPosition <= 0 ? '0.3' : '1';
-                prevBtn.style.pointerEvents = scrollPosition <= 0 ? 'none' : 'auto';
-                nextBtn.style.opacity = scrollPosition >= maxScroll ? '0.3' : '1';
-                nextBtn.style.pointerEvents = scrollPosition >= maxScroll ? 'none' : 'auto';
+                this.cardWidth = config.cardWidth || 320;
+                this.gap = config.gap || 20;
+                this.speed = config.speed || 30;
+                this.pauseOnCardClick = config.pauseOnCardClick || false;
+                this.hasArrows = config.hasArrows !== false;
+                this.autoScroll = config.autoScroll !== false;
+
+                this.scrollPosition = 0;
+                this.animationId = null;
+                this.pauseTimeout = null;
+                this.isAutoScrolling = false;
+                this.isDragging = false;
+                this.startX = 0;
+                this.startScrollPosition = 0;
+
+                // Store original cards template
+                this.originalCards = [];
+                this.currentIndex = 0;
+
+                this.init();
             }
 
-            prevBtn.addEventListener('click', () => {
-                if (sliderType === 'clients') {
-                    const currentTransform = getComputedStyle(track).transform;
-                    const matrix = new DOMMatrix(currentTransform);
-                    const currentX = matrix.m41;
-                    
-                    track.style.animation = 'none';
-                    track.style.transform = `translateX(${currentX + 300}px)`;
-                    
-                    setTimeout(() => {
-                        track.style.animation = 'scroll 40s linear infinite';
-                    }, 500);
-                } else {
-                    scrollPosition = Math.max(0, scrollPosition - scrollAmount);
-                    track.style.transform = `translateX(-${scrollPosition}px)`;
-                    updateButtons();
-                }
-            });
+            init() {
+                // Store original cards as template
+                this.storeOriginalCards();
 
-            nextBtn.addEventListener('click', () => {
-                if (sliderType === 'clients') {
-                    const currentTransform = getComputedStyle(track).transform;
-                    const matrix = new DOMMatrix(currentTransform);
-                    const currentX = matrix.m41;
-                    
-                    track.style.animation = 'none';
-                    track.style.transform = `translateX(${currentX - 300}px)`;
-                    
-                    setTimeout(() => {
-                        track.style.animation = 'scroll 40s linear infinite';
-                    }, 500);
-                } else {
-                    const maxScroll = track.scrollWidth - track.clientWidth;
-                    scrollPosition = Math.min(maxScroll, scrollPosition + scrollAmount);
-                    track.style.transform = `translateX(-${scrollPosition}px)`;
-                    updateButtons();
-                }
-            });
+                // Build initial infinite track
+                this.buildInfiniteTrack();
 
-            updateButtons();
+                // Setup interactions
+                this.setupInteractions();
+
+                if (this.autoScroll) {
+                    this.startAutoScroll();
+                }
+            }
+
+            storeOriginalCards() {
+                // Save original cards HTML for cloning
+                const cards = Array.from(this.track.children);
+
+                this.originalCards = cards.map(card => {
+                    // Force visible class
+                    card.classList.add('visible');
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                    return card.cloneNode(true);
+                });
+
+                // Clear the track
+                this.track.innerHTML = '';
+            }
+
+            buildInfiniteTrack() {
+                // Create enough clones to fill viewport + buffer
+                const viewportWidth = this.container.offsetWidth || window.innerWidth;
+                const cardTotalWidth = this.cardWidth + this.gap;
+                const cardsNeeded = Math.ceil(viewportWidth / cardTotalWidth) + 10;
+                const setsNeeded = Math.ceil(cardsNeeded / this.originalCards.length);
+
+                // Build multiple sets
+                for (let set = 0; set < setsNeeded * 3; set++) {
+                    this.originalCards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        clone.classList.add('visible');
+                        clone.style.opacity = '1';
+                        clone.style.transform = 'translateY(0)';
+                        this.track.appendChild(clone);
+                    });
+                }
+
+                // Start from middle to allow bidirectional scrolling
+                this.oneSetWidth = this.originalCards.length * cardTotalWidth;
+                this.scrollPosition = this.oneSetWidth * setsNeeded;
+                this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+            }
+
+            setupInteractions() {
+                if (this.hasArrows) this.setupArrows();
+                if (this.pauseOnCardClick) this.setupCardClicks();
+                this.setupTouch();
+            }
+
+            setupArrows() {
+                const prev = this.container.querySelector(`[data-slider="${this.sliderType}"].slider-prev`);
+                const next = this.container.querySelector(`[data-slider="${this.sliderType}"].slider-next`);
+                if (!prev || !next) return;
+
+                prev.addEventListener('click', () => {
+                    this.stopAutoScroll();
+                    this.scrollBy(-(this.cardWidth + this.gap));
+                    this.resumeAfterDelay(1500);
+                });
+
+                next.addEventListener('click', () => {
+                    this.stopAutoScroll();
+                    this.scrollBy(this.cardWidth + this.gap);
+                    this.resumeAfterDelay(1500);
+                });
+            }
+
+            setupCardClicks() {
+                this.track.querySelectorAll('.project-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        this.stopAutoScroll();
+                        this.resumeAfterDelay(3000);
+                    });
+                });
+            }
+
+            setupTouch() {
+                const wrapper = this.container.querySelector('.slider-wrapper');
+                if (!wrapper) return;
+
+                // Touch events
+                wrapper.addEventListener('touchstart', (e) => {
+                    this.stopAutoScroll();
+                    this.isDragging = true;
+                    this.startX = e.touches[0].clientX;
+                    this.startScrollPosition = this.scrollPosition;
+                    this.track.style.transition = 'none';
+                }, { passive: true });
+
+                wrapper.addEventListener('touchmove', (e) => {
+                    if (!this.isDragging) return;
+                    const diff = this.startX - e.touches[0].clientX;
+                    this.scrollPosition = this.startScrollPosition + diff;
+                    this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+                }, { passive: true });
+
+                wrapper.addEventListener('touchend', () => {
+                    if (!this.isDragging) return;
+                    this.isDragging = false;
+                    this.track.style.transition = 'transform 0.4s ease';
+                    this.checkAndExtendTrack();
+                    this.resumeAfterDelay(2000);
+                });
+
+                // Mouse drag (desktop)
+                wrapper.addEventListener('mousedown', (e) => {
+                    this.stopAutoScroll();
+                    this.isDragging = true;
+                    this.startX = e.clientX;
+                    this.startScrollPosition = this.scrollPosition;
+                    this.track.style.transition = 'none';
+                    wrapper.style.cursor = 'grabbing';
+                });
+
+                wrapper.addEventListener('mousemove', (e) => {
+                    if (!this.isDragging) return;
+                    const diff = this.startX - e.clientX;
+                    this.scrollPosition = this.startScrollPosition + diff;
+                    this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+                });
+
+                const endDrag = () => {
+                    if (!this.isDragging) return;
+                    this.isDragging = false;
+                    this.track.style.transition = 'transform 0.4s ease';
+                    wrapper.style.cursor = 'grab';
+                    this.checkAndExtendTrack();
+                    this.resumeAfterDelay(2000);
+                };
+
+                wrapper.addEventListener('mouseup', endDrag);
+                wrapper.addEventListener('mouseleave', endDrag);
+            }
+
+            scrollBy(amount) {
+                this.scrollPosition += amount;
+                this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+
+                setTimeout(() => this.checkAndExtendTrack(), 400);
+            }
+
+            checkAndExtendTrack() {
+                // Dynamic extension: add more clones if needed
+                const trackWidth = this.track.scrollWidth;
+                const threshold = trackWidth * 0.2;
+
+                // If scrolling too far right, add clones to the end
+                if (this.scrollPosition > trackWidth - threshold) {
+                    this.originalCards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        clone.classList.add('visible');
+                        clone.style.opacity = '1';
+                        clone.style.transform = 'translateY(0)';
+                        this.track.appendChild(clone);
+                    });
+                }
+
+                // If scrolling too far left, add clones to the beginning
+                if (this.scrollPosition < threshold) {
+                    const fragment = document.createDocumentFragment();
+                    this.originalCards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        clone.classList.add('visible');
+                        clone.style.opacity = '1';
+                        clone.style.transform = 'translateY(0)';
+                        fragment.appendChild(clone);
+                    });
+
+                    this.track.insertBefore(fragment, this.track.firstChild);
+                    this.scrollPosition += this.oneSetWidth;
+                    this.track.style.transition = 'none';
+                    this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+
+                    requestAnimationFrame(() => {
+                        this.track.style.transition = 'transform 0.4s ease';
+                    });
+                }
+
+                // Memory management: prevent infinite DOM growth
+                const totalSets = Math.floor(this.track.scrollWidth / this.oneSetWidth);
+                if (totalSets > 50) {
+                    const middlePosition = this.oneSetWidth * 25;
+                    this.track.style.transition = 'none';
+                    this.scrollPosition = middlePosition + (this.scrollPosition % this.oneSetWidth);
+                    this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+
+                    // Trim excess nodes
+                    const currentCards = Array.from(this.track.children);
+                    const keepStart = 15 * this.originalCards.length;
+                    const keepEnd = 35 * this.originalCards.length;
+
+                    currentCards.forEach((card, i) => {
+                        if (i < keepStart || i >= keepEnd) {
+                            card.remove();
+                        }
+                    });
+
+                    requestAnimationFrame(() => {
+                        this.track.style.transition = 'transform 0.4s ease';
+                    });
+                }
+            }
+
+            startAutoScroll() {
+                this.isAutoScrolling = true;
+                this.track.style.willChange = 'transform';
+
+                let lastTime = performance.now();
+
+                const animate = (currentTime) => {
+                    if (!this.isAutoScrolling || this.isDragging) {
+                        this.animationId = requestAnimationFrame(animate);
+                        return;
+                    }
+
+                    let deltaTime = (currentTime - lastTime) / 1000;
+                    lastTime = currentTime;
+
+                    // Prevent huge jumps
+                    deltaTime = Math.min(deltaTime, 0.016);
+
+                    this.scrollPosition += this.speed * deltaTime;
+                    this.checkAndExtendTrack();
+                    this.track.style.transform = `translateX(-${this.scrollPosition}px)`;
+
+                    this.animationId = requestAnimationFrame(animate);
+                };
+
+                this.animationId = requestAnimationFrame(animate);
+            }
+
+            stopAutoScroll() {
+                this.isAutoScrolling = false;
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+                if (this.pauseTimeout) {
+                    clearTimeout(this.pauseTimeout);
+                }
+            }
+
+            resumeAfterDelay(ms) {
+                clearTimeout(this.pauseTimeout);
+                this.pauseTimeout = setTimeout(() => {
+                    if (this.autoScroll) this.startAutoScroll();
+                }, ms);
+            }
         }
 
-        // Initialize sliders for desktop only
-        if (window.innerWidth > 768) {
-            initSlider('projects');
-            initSlider('services');
-        }
-        initSlider('clients'); // Always initialize clients
 
-        // Mobile Menu
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav a');
+        // =============================================================
+        // INIT SLIDERS - ALL DEVICES
+        // =============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Detect screen size
+            const screenWidth = window.innerWidth;
+            let projectCardWidth = 320;
+            let serviceCardWidth = 320;
 
-        function openMobileMenu() {
-            mobileMenuToggle.classList.add('active');
-            mobileMenuPanel.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
+            // Responsive card sizing
+            if (screenWidth <= 375) {
+                projectCardWidth = 240;
+                serviceCardWidth = 240;
+            } else if (screenWidth <= 480) {
+                projectCardWidth = 260;
+                serviceCardWidth = 260;
+            } else if (screenWidth <= 767) {
+                projectCardWidth = 280;
+                serviceCardWidth = 280;
+            }
+
+            // Projects Slider - ALL DEVICES
+            new InfiniteSlider({
+                sliderType: 'projects',
+                trackSelector: '#projectsSlider',
+                containerSelector: '.projects .slider-container',
+                cardWidth: projectCardWidth,
+                gap: 20,
+                speed: 60,
+                pauseOnCardClick: true,
+                hasArrows: true,
+                autoScroll: true
+            });
+
+            // Services Slider - ALL DEVICES
+            new InfiniteSlider({
+                sliderType: 'services',
+                trackSelector: '#servicesSlider',
+                containerSelector: '.services .slider-container',
+                cardWidth: serviceCardWidth,
+                gap: 20,
+                speed: 60,
+                pauseOnCardClick: false,
+                hasArrows: true,
+                autoScroll: true
+            });
+
+            // Clients Slider - ALL DEVICES
+            new InfiniteSlider({
+                sliderType: 'clients',
+                trackSelector: '.clients-scroll',
+                containerSelector: '.clients-showcase',
+                cardWidth: 200,
+                gap: 20,
+                speed: 10,
+                pauseOnCardClick: false,
+                hasArrows: false,
+                autoScroll: true
+            });
+        });
+
+
+        // =============================================================
+        // MOBILE MENU
+        // =============================================================
+        const toggle = document.getElementById('mobileMenuToggle');
+        const panel = document.getElementById('mobileMenuPanel');
+        const closeBtn = document.getElementById('mobileMenuClose');
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const menuLinks = document.querySelectorAll('.mobile-menu-nav a');
+
+        function openMenu() {
+            toggle?.classList.add('active');
+            panel?.classList.add('active');
+            overlay?.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeMobileMenu() {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuPanel.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
+        function closeMenu() {
+            toggle?.classList.remove('active');
+            panel?.classList.remove('active');
+            overlay?.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
-                if (mobileMenuPanel.classList.contains('active')) {
-                    closeMobileMenu();
-                } else {
-                    openMobileMenu();
-                }
-            });
-        }
+        toggle?.addEventListener('click', () => panel.classList.contains('active') ? closeMenu() : openMenu());
+        closeBtn?.addEventListener('click', closeMenu);
+        overlay?.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', closeMobileMenu);
-        }
 
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-        }
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileMenu();
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // =============================================================
+        // SMOOTH SCROLL
+        // =============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 60;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.querySelector(a.getAttribute('href'));
+                if (!target) return;
+
+                const offset = 60;
+                const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({ top: y, behavior: 'smooth' });
             });
         });
 
-        // Subtle parallax for hero
+
+        // =============================================================
+        // HERO PARALLAX
+        // =============================================================
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
-                window.requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
                     const scrolled = window.pageYOffset;
-                    const heroContent = document.querySelector('.hero-content');
-                    if (heroContent && scrolled < window.innerHeight) {
-                        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
-                        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
+                    const hero = document.querySelector('.hero-content');
+                    if (hero && scrolled < window.innerHeight) {
+                        hero.style.transform = `translateY(${scrolled * 0.2}px)`;
+                        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
                     }
                     ticking = false;
                 });
                 ticking = true;
             }
         });
-
-        // Responsive Slider Handling
-        function handleResponsiveSliders() {
-            const projectsGrid = document.getElementById('projectsSlider');
-            const servicesGrid = document.getElementById('servicesSlider');
-            
-            if (window.innerWidth <= 768) {
-                // Mobile: Reset transform, let native scroll work
-                if (projectsGrid) projectsGrid.style.transform = 'none';
-                if (servicesGrid) servicesGrid.style.transform = 'none';
-            } else {
-                // Desktop: Re-initialize sliders
-                initSlider('projects');
-                initSlider('services');
-            }
-        }
-
-        window.addEventListener('resize', handleResponsiveSliders);
-        handleResponsiveSliders();
     </script>
+
 </body>
+
 </html>
