@@ -1250,35 +1250,18 @@
             background: transparent;
         }
 
-        .clients-showcase {
-            margin-top: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
+/* Clients Section - Updated for InfiniteSlider */
+.clients-scroll.slider-track {
+    display: flex;
+    gap: 1.25rem;
+    transition: transform 0.4s ease;
+}
 
-        .clients-scroll {
-            display: flex;
-            gap: 1.25rem;
-            animation: scroll 40s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .clients-track {
-            display: flex;
-            gap: 1.25rem;
-            flex-shrink: 0;
-        }
+.clients-scroll.slider-track .client-card {
+    flex: 0 0 200px;
+    max-width: 200px;
+    min-width: 200px;
+}
 
         .client-card {
             background: white;
@@ -1497,6 +1480,15 @@
                 gap: 1rem;
             }
 
+            /* Clients slider mobile */
+            .clients-scroll.slider-track .client-card {
+                flex: 0 0 180px !important;
+                max-width: 180px !important;
+                min-width: 180px !important;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
             /* CRITICAL FIX: Force visibility on mobile sliders */
             .projects-grid.slider-track,
             .services-grid.slider-track {
@@ -1640,6 +1632,13 @@
                 font-size: 1rem;
             }
 
+            /* Clients slider small mobile */
+            .clients-scroll.slider-track .client-card {
+                flex: 0 0 160px !important;
+                max-width: 160px !important;
+                min-width: 160px !important;
+            }
+
             .projects-grid.slider-track .project-card,
             .services-grid.slider-track .service-card {
                 flex: 0 0 260px !important;
@@ -1697,6 +1696,12 @@
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
+        }
+
+        @media (max-width: 361px) {
+                .hero-content{
+                    margin-left: -7px;
+                }
         }
     </style>
 </head>
@@ -2136,204 +2141,118 @@
     </section>
 
     <!-- Clients Section -->
-    <section class="clients" id="clients">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">Trusted By</div>
-                <h2 class="section-title">Our Prime Clients</h2>
-            </div>
-            <div class="clients-showcase">
-                <div class="clients-scroll">
-                    <div class="clients-track">
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/Joyalukkas.png" alt="Jos Alukkas">
-                            </div>
-                            <div class="client-name">Jos Alukkas</div>
+<!-- Clients Section -->
+<section class="clients" id="clients">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="section-label">Trusted By</div>
+            <h2 class="section-title">Our Prime Clients</h2>
+        </div>
+        <div class="slider-container">
+            <button class="slider-arrow slider-prev" data-slider="clients">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-wrapper">
+                <div class="clients-scroll slider-track" id="clientsSlider">
+                    <!-- Keep ONLY these 15 cards - remove the duplicate set -->
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/jos.jpeg" alt="Jos Alukkas">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/Chennaisilks.png"
-                                    alt="The Chennai Silks">
-                            </div>
-                            <div class="client-name">The Chennai Silks</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/PSR.png" alt="PSR Thangamaligai">
-                            </div>
-                            <div class="client-name">PSR Thangamaligai</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/KUKU.png" alt="Kuku FM">
-                            </div>
-                            <div class="client-name">Kuku FM</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/pocketfm.png" alt="Pocket FM">
-                            </div>
-                            <div class="client-name">Pocket FM</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/KMCH.png" alt="KMCH Hospital">
-                            </div>
-                            <div class="client-name">KMCH Hospital</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="images/anandhas.png" alt="Anandhas">
-                            </div>
-                            <div class="client-name">Anandhas</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-toyota.png" alt="Anamalais Toyota">
-                            </div>
-                            <div class="client-name">Anamalais Toyota</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-royalfitness.png" alt="Royal Fitness Gym">
-                            </div>
-                            <div class="client-name">Royal Fitness Gym</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-hdfc.png" alt="HDFC">
-                            </div>
-                            <div class="client-name">HDFC</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-icici.png" alt="ICICI">
-                            </div>
-                            <div class="client-name">ICICI</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-satvik.png" alt="Satvik Movements">
-                            </div>
-                            <div class="client-name">Satvik Movements</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-amcollections.png" alt="AM Collections">
-                            </div>
-                            <div class="client-name">AM Collections</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-stanes.png" alt="Stanes Garden Center">
-                            </div>
-                            <div class="client-name">Stanes Garden Center</div>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-mayilmark.png" alt="Mayil Mark Samba Ravai">
-                            </div>
-                            <div class="client-name">Mayil Mark Samba Ravai</div>
-                        </div>
+                        <div class="client-name">Jos Alukkas</div>
                     </div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="clients-track" aria-hidden="true">
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-josalukkas.png" alt="Jos Alukkas">
-                            </div>
-                            <div class="client-name">Jos Alukkas</div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/Chennaisilks.png" alt="The Chennai Silks">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-chennaisilks.png" alt="The Chennai Silks">
-                            </div>
-                            <div class="client-name">The Chennai Silks</div>
+                        <div class="client-name">The Chennai Silks</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/PSR.png" alt="PSR Thangamaligai">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-psr.png" alt="PSR Thangamaligai">
-                            </div>
-                            <div class="client-name">PSR Thangamaligai</div>
+                        <div class="client-name">PSR Thangamaligai</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/KUKU.png" alt="Kuku FM">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-kukufm.png" alt="Kuku FM">
-                            </div>
-                            <div class="client-name">Kuku FM</div>
+                        <div class="client-name">Kuku FM</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/pocketfm.png" alt="Pocket FM">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-pocketfm.png" alt="Pocket FM">
-                            </div>
-                            <div class="client-name">Pocket FM</div>
+                        <div class="client-name">Pocket FM</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/KMCH.png" alt="KMCH Hospital">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-kmch.png" alt="KMCH Hospital">
-                            </div>
-                            <div class="client-name">KMCH Hospital</div>
+                        <div class="client-name">KMCH Hospital</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/anandhas.png" alt="Anandhas">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-anandhas.png" alt="Anandhas">
-                            </div>
-                            <div class="client-name">Anandhas</div>
+                        <div class="client-name">Anandhas</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/annamalai.png" alt="Anamalais Toyota">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-toyota.png" alt="Anamalais Toyota">
-                            </div>
-                            <div class="client-name">Anamalais Toyota</div>
+                        <div class="client-name">Anamalais Toyota</div>
+                    </div>
+                    <!-- <div class="client-card">
+                        <div class="client-logo">
+                            <img src="placeholder-royalfitness.png" alt="Royal Fitness Gym">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-royalfitness.png" alt="Royal Fitness Gym">
-                            </div>
-                            <div class="client-name">Royal Fitness Gym</div>
+                        <div class="client-name">Royal Fitness Gym</div>
+                    </div> -->
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/HDFC.png" alt="HDFC">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-hdfc.png" alt="HDFC">
-                            </div>
-                            <div class="client-name">HDFC</div>
+                        <div class="client-name">HDFC</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/ICICI.png" alt="ICICI">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-icici.png" alt="ICICI">
-                            </div>
-                            <div class="client-name">ICICI</div>
+                        <div class="client-name">ICICI</div>
+                    </div>
+                    <!-- <div class="client-card">
+                        <div class="client-logo">
+                            <img src="placeholder-satvik.png" alt="Satvik Movements">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-satvik.png" alt="Satvik Movements">
-                            </div>
-                            <div class="client-name">Satvik Movements</div>
+                        <div class="client-name">Satvik Movements</div>
+                    </div> -->
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/AMcollections.jpeg" alt="AM Collections">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-amcollections.png" alt="AM Collections">
-                            </div>
-                            <div class="client-name">AM Collections</div>
+                        <div class="client-name">AM Collections</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/stanes.png" alt="Stanes Garden Center">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-stanes.png" alt="Stanes Garden Center">
-                            </div>
-                            <div class="client-name">Stanes Garden Center</div>
+                        <div class="client-name">Stanes Garden Center</div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-logo">
+                            <img src="images/mayilmark.png" alt="Mayil Mark Samba Ravai">
                         </div>
-                        <div class="client-card">
-                            <div class="client-logo">
-                                <img src="placeholder-mayilmark.png" alt="Mayil Mark Samba Ravai">
-                            </div>
-                            <div class="client-name">Mayil Mark Samba Ravai</div>
-                        </div>
+                        <div class="client-name">Mayil Mark Samba Ravai</div>
                     </div>
                 </div>
             </div>
+            <button class="slider-arrow slider-next" data-slider="clients">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -2782,18 +2701,22 @@
             });
 
             // Clients Slider - ALL DEVICES
+
+            // Clients Slider - ALL DEVICES
+            const clientCardWidth = screenWidth <= 480 ? 160 : screenWidth <= 768 ? 180 : 200;
+
             new InfiniteSlider({
                 sliderType: 'clients',
-                trackSelector: '.clients-scroll',
-                containerSelector: '.clients-showcase',
-                cardWidth: 200,
+                trackSelector: '#clientsSlider',
+                containerSelector: '.clients .slider-container',
+                cardWidth: clientCardWidth,
                 gap: 20,
-                speed: 10,
+                speed: 40,
                 pauseOnCardClick: false,
-                hasArrows: false,
+                hasArrows: true,
                 autoScroll: true
+            });    
             });
-        });
 
 
         // =============================================================
